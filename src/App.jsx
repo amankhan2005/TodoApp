@@ -49,14 +49,18 @@ function App() {
     <TodoProvider
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
     >
-      <div className="min-h-screen bg-gradient-to-br from-[#994caf] to-[#7eb0e9] py-10 px-4">
-        <div className="w-full max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20 px-6 py-8">
+      {/* Background */}
+      <div className="min-h-screen bg-gradient-to-br from-purple-700 via-indigo-700 to-blue-700 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-10">
+        
+        {/* Container */}
+        <div className="w-full max-w-2xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10">
+          
           {/* Title */}
-          <h1 className="text-4xl font-extrabold text-center text-white drop-shadow-lg mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-white drop-shadow-md mb-3">
             ✅ Manage Your Todos
           </h1>
-          <p className="text-center text-gray-300 mb-8">
-            Stay productive. Organize your tasks in style 🚀
+          <p className="text-center text-gray-200 mb-8 text-sm sm:text-base">
+            Stay productive anywhere — mobile, tablet, or desktop 🚀
           </p>
 
           {/* Form */}
@@ -67,11 +71,9 @@ function App() {
           {/* Todos */}
           <div className="space-y-3">
             {todos.length > 0 ? (
-              todos.map((todo) => (
-                <TodoItem key={todo.id} todo={todo} />
-              ))
+              todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
             ) : (
-              <p className="text-center text-gray-400 italic">
+              <p className="text-center text-gray-300 italic">
                 🎉 You’re all caught up!
               </p>
             )}
